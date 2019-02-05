@@ -2,8 +2,13 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  search: function(query) {
+    return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+query+"&api-key=DGYyZkrMtQgJDfjEaLfY0wGYd3AtuQK8");
+  },
+  
+  
+  getArticles: function() {
+    return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=dogs&api-key=DGYyZkrMtQgJDfjEaLfY0wGYd3AtuQK8");
   },
   // Gets the book with the given id
   getBook: function(id) {
